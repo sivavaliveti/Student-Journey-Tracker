@@ -1,0 +1,670 @@
+.container{
+    background-color: rgb(167, 174, 174);
+    padding: 15px;
+}
+ .header{
+        display: flex;
+        justify-content: space-between;
+}
+.year{
+    gap:20px;
+    display: flex;
+}
+.row{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.card {
+    width: 25%;
+    padding: 10px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 20px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.student-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    /* border-radius: 50%; */
+    margin: 20px auto 10px;
+    border: none;
+  filter: drop-shadow(0px 0px 5px blue);
+
+}
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.mail,.phone,.linkdin{
+    display: flex;
+    gap: 20px;
+}
+.icon{
+    height: 15px;
+    width: 15px;
+}
+
+.card-title {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+.contact-info {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .card {
+        height: auto;
+        width: auto;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+    .card-body p{
+width:auto;
+font-family: auto;
+    }
+
+    .student-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contact-info {
+        font-size: 0.85rem;
+    }
+.contact-info p,img{
+    width: auto;
+    height: auto;
+}
+    .card-title {
+        font-size: 1.1rem;
+    }
+}
+
+
+.progress{
+    width: 75%;
+}
+
+.head_row
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.btn-outline-primary {
+    background-color: white;
+    border: none;
+    height: 80px;
+    width: 35px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+.head_row .btn-outline-primary:hover {
+    background-color: #d3d9db;
+    color: #5e6162;
+}
+
+.head_row .btn-group {
+    display: flex;
+    gap: 22px; 
+}
+
+
+.sem-btn {
+    font-size: 14px;
+    padding: 30px 35px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+   width:auto;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(231, 229, 229, 0.3);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s;
+
+} 
+.sem-btn:hover {
+    background-color: #d3d9db;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.head_row .btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .progress {
+        width: 100%; /* Adjust progress width to fit the screen */
+    }
+
+    .head_row {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+        gap: 15px; /* Reduce gap for better alignment */
+    }
+
+    .btn-outline-primary {
+        height: 60px; /* Adjust button height */
+        width: 30px; /* Adjust button width */
+        border-radius: 5px;
+    }
+
+    .btn-container {
+        justify-content: flex-start; /* Align buttons to the left */
+        flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+        gap: 10px; /* Adjust button spacing */
+    }
+
+    .btn-group {
+        flex-wrap: wrap; /* Wrap buttons to next line if needed */
+        gap: 15px; /* Reduce gap for smaller screens */
+    }
+
+    .sem-btn {
+        font-size: 12px; /* Adjust font size for readability */
+        padding: 15px 20px; /* Reduce padding for smaller screens */
+        width: auto; /* Ensure buttons scale dynamically */
+        height: auto; /* Ensure buttons adjust to content size */
+        border-radius: 8px;
+    }
+
+    .sem-btn:hover {
+        background-color: #d3d9db; /* Retain hover effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjust shadow for consistency */
+    }
+}
+/* 
+.graph{
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 15px;
+}
+.bars{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.table{
+    margin:0;
+    padding-top: 20px;
+    padding-right: 50px;
+    display: flex;
+    
+}
+.sem-label {
+    display: flex;
+    width: 170px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+    gap:0px;
+}
+.bar-container {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-top: 15px;
+    width: 170px;
+    height: 260px;
+    border: 1px solid gray;
+    position: relative;
+    overflow: hidden;
+
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.bar {
+    border-radius: 6px;
+    width: 80px; 
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    bottom:0;
+    background-color: black;
+}
+
+.progress-container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+} 
+.percentage-values { 
+    display: flex;
+    flex-direction: column;
+    font-family: Helvetica, sans-serif; 
+    font-size: 14px; 
+    font-weight: bold;
+    justify-content: space-between;
+    height: 93%;
+    padding: 70px 10px 0px 0px;
+    } 
+
+    .percentage-word { 
+        writing-mode: vertical-lr; 
+        transform: rotate(180deg); 
+        font-family: Helvetica, sans-serif; 
+        font-size: 14.26px; 
+        font-weight: 400; 
+        line-height: 54.06px; 
+        text-align: left; 
+        position: relative;
+        margin: 0px;
+        height: 30%;
+        top: 200px;
+    } 
+     */
+
+     .graph {
+        margin-top: 10px;
+        border-radius: 10px;
+        background-color: white;
+        margin-left: 15px;
+        padding: 15px;
+        display: flex; /* Ensure all elements align in a row */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        align-items: center; /* Vertically align elements */
+        gap: 20px; /* Add space between elements */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Polished shadow effect */
+    }
+    
+
+    .bars {
+        display: flex;
+        align-items: flex-start; /* Align bars to the bottom */ /* Space between bars */
+        background-color: white;
+        border-radius: 10px;
+    }
+    .progress-container {
+        display: flex;
+        flex-direction: row; /* Arrange items side by side */
+        align-items: flex-end; /* Align items at the bottom */
+        height: 90%; /* Ensure consistent height */
+        gap: 0; /* Remove gap between percentage-word and percentage-values */
+        padding-top: 60px;
+    }
+    
+    .percentage-word { 
+        writing-mode: vertical-rl; 
+        transform: rotate(180deg); 
+        font-family: Helvetica, sans-serif; 
+        font-size: 14.26px; 
+        font-weight: 400; 
+        line-height: 54.06px; 
+        text-align: left; 
+        margin: 0;
+    }
+    
+    .percentage-values { 
+        display: flex;
+        flex-direction: column; /* Stack percentages vertically */
+        font-family: Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        gap: 20px; /* Space between each percentage value */
+        margin: 0;
+    }
+    
+
+    /* .progress-container { 
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        height: 90%;
+    }
+
+    .percentage-word { 
+
+        writing-mode: vertical-rl; 
+        transform: rotate(180deg); 
+        font-family: Helvetica, sans-serif; 
+        font-size: 14.26px; 
+        font-weight: 400; 
+        line-height: 54.06px; 
+        text-align: left; 
+        margin: 0;
+    }
+    .percentage-values { 
+        display: flex;
+        flex-direction: column;
+    }  */
+    
+/*     
+    .percentage-word { 
+        writing-mode: vertical-rl; 
+        transform: rotate(180deg); 
+        font-family: Helvetica, sans-serif; 
+        font-size: 14.26px; 
+        font-weight: 400; 
+        line-height: 54.06px; 
+        text-align: left; 
+        position: absolute; 
+        top: 140px;
+        left: -20px;
+    }
+    
+    .percentage-values { 
+        padding-top: 15px;
+        top:20px;
+        height: 100%; 
+        gap: 30px; 
+        font-family: Helvetica, sans-serif; 
+        font-size: 14px; 
+        font-weight: bold;
+        text-align: right; 
+    } */
+
+
+
+
+    .table {
+        display: flex; /* Keep all semester bars in one line */
+        align-items: flex-end; /* Align bars to the bottom */ /* Space between semesters */
+    }
+    
+    .sem-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center-align each semester *//* Space between labels and bars */
+    }
+    
+    .sem-label {
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+        font-weight: bold;
+        background-color: #f8f9fa;
+        border: 1px solid gray;
+        width: 170px;
+    }
+    
+    .bar-container {
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 170px;
+        height: 250px;
+        border: 1px solid gray;
+        background-color: #f8f9fa;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .bar {
+        width: 60px;
+        height: 100%; /* Adjust based on percentage */
+        border-radius: 6px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        color: white; /* Text color for readability */
+    }
+    
+    .label-groups {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 12px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .graph {
+            flex-direction: column; /* Stack elements vertically on small screens */
+            align-items: center;
+        }
+    
+        .bars {
+            flex-wrap: wrap;
+            justify-content: center; /* Center elements horizontally */
+        }
+    
+        .progress-container {
+            flex-direction: row; /* Align percentage values horizontally */
+            gap: 15px;
+        }
+    
+        .percentage-values {
+            font-size: 12px;
+            height: auto;
+        }
+    
+        .percentage-word {
+            transform: rotate(90deg);
+            font-size: 12px;
+        }
+    
+        .table {
+            flex-wrap: wrap; /* Allow bars to wrap */
+            justify-content: center;
+            gap: 10px;
+        }
+    
+        .sem-container {
+            gap: 5px;
+        }
+    
+        .sem-label, .bar-container {
+            width: 70px;
+        }
+    
+        .bar {
+            width: 50px;
+        }
+    }
+    
+    
+/* .percentage-word { 
+    writing-mode: vertical-rl; 
+    transform: rotate(180deg); 
+    font-family: Helvetica, sans-serif; 
+    font-size: 14.26px; 
+    font-weight: 400; 
+    line-height: 54.06px; 
+    text-align: left; 
+    position: relative;
+    top: 180px; 
+    padding-left: 50px;
+} 
+
+.percentage-values { 
+display: flex;
+flex-direction: column;
+font-family: Helvetica, sans-serif; 
+font-size: 14px; 
+font-weight: bold;
+justify-content: space-between;
+height: 95%;
+padding: 60px 10px 0px 0px;
+} 
+
+*/
+
+/*
+
+
+.left,.right{
+    height:25px;
+    width:25px;
+ }
+
+
+ .graph{
+    margin-top: 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 15px;
+}
+ 
+.bars{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.progress-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+} 
+.percentage-word { 
+    writing-mode: vertical-rl; 
+    transform: rotate(180deg); 
+    font-family: Helvetica, sans-serif; 
+    font-size: 14.26px; 
+    font-weight: 400; 
+    line-height: 54.06px; 
+    text-align: left; 
+    position: relative;
+    top: 180px; 
+    padding-left: 50px;
+}
+.percentage-values { 
+    gap: 15px; 
+    font-family: Helvetica, sans-serif; 
+    font-size: 14px; 
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left:50px;
+} 
+
+.note{
+    padding-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+.table{
+    margin:0;
+    padding-right: 50px;
+    display: flex;
+    
+}
+.sem-container{
+    display: flex; 
+    flex-direction: column; 
+    margin: 0px;
+    padding-top: 40px; 
+    gap:0px;
+}
+.bar-container {
+    display: flex;
+    margin: 0;
+    width: 150px;
+    height: 220px;
+    border: 1px solid gray;
+    position: relative;
+    overflow: hidden;
+    padding: 20px 20px 0 40px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.sem-label {
+    display: flex;
+    width: 150px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+    gap:0px;
+}
+.btn-group{
+    gap:2px;
+} 
+.sub-groups{
+   padding-top: 20px;
+   gap:5px;
+}
+.label-groups {
+    display: flex; 
+    gap: 15px; 
+    margin-top: 20px;
+    justify-content: center; 
+}
+
+.label {
+    font-size: 1rem; 
+    font-weight: normal; 
+    color: #333; 
+    background-color: transparent; 
+    gap:10px;
+} 
+
+.bar {
+    margin: 0;
+    border-radius: 6px;
+    width: 80px; 
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    bottom:0;
+    background-color: black;
+}
+
+
+.sem-btn.enabled {
+    background-color: white;
+    color: black;
+}
+
+.sem-btn.disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.sem-btn.selected {
+    border: 2px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}  */

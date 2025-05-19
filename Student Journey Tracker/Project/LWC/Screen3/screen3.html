@@ -1,0 +1,262 @@
+<template>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="dropcard">
+                <a href="" class="btn-link" onclick={handleGoBack}>← Go Back</a>
+            </div>
+
+            <div class="year">
+                <span>Year</span>
+                <div class="dropdown-container d-flex align-items-center">
+                    <select class="form-select custom-select dropdown-toggle" onchange={handleYearChange} aria-label="Select Year">
+                        <option value="all" selected>All</option>
+                        <option value="1">Year 1</option>
+                        <option value="2">Year 2</option>
+                        <option value="3">Year 3</option>
+                        <option value="4">Year 4</option>
+                    </select>
+                    <i class="bi bi-caret-down-fill ml-2"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Info Section -->
+        <div class="row">
+            <div class="card">
+                <img src={student} alt="Student Image" class="student-img" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">Eleanor Pena</h5>
+                    <p><strong>Program Opted:</strong> Java Full Stack</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <span class="card-title">About</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    <span class="card-title">Contact</span>
+                    <div class="contact-info">
+                        <div class="mail">
+                            <img src={mail} alt="mail icon" class="icon" />
+                            <p class="Email">Eleanorpena@gmail.com</p>
+                        </div>
+                        <div class="phone">
+                            <img src={phone} alt="phone icon" class="icon" />
+                            <p class="phno">9652348956</p>
+                        </div>
+                        <div class="linkdin">
+                            <img src={linkdin} alt="linkedin icon" class="icon" />
+                            <p class="linkdin">
+                                <a href="https://www.linkedin.com" target="_blank">LinkedIn Profile</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+        <!-- Progress Graph Section -->
+        <div class="progress">
+            <div class="head_row">
+                <button type="button" class="btn-outline-primary" onclick={handlePrev}>
+                    <img src={outline_left} alt="left icon" class="left" />
+                </button>
+
+                <div class="btn-container">
+                    <div class="btn-group" role="group">
+                        <template for:each={semestersToShow} for:item="semester">
+                            <button key={semester} type="button" class="sem-btn">
+                                {semester}
+                            </button>
+                        </template>
+                    </div>
+                </div>
+
+                <button type="button" class="btn-outline-primary" onclick={handleNext}>
+                    <img src={outline_right} alt="right icon" class="right" />
+                </button>
+            </div>
+
+            <!-- Bar Graph -->
+            <div class="graph">
+                <div class="bars">
+                    <div class="progress-container">
+                    
+                            <div class="percentage-word">Percentage</div>
+                            <div class="percentage-values">
+                                <span>100</span>
+                                <span>80</span>
+                                <span>60</span>
+                                <span>40</span>
+                                <span>20</span>
+                                <span>0</span>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Progress Bars -->
+                    <div class="table">
+                        <template for:each={visibleSemesters} for:item="sem">
+                            <div key={sem.id} class="sem-container">
+                                <div class="sem-label">{sem.id}</div>
+                                <div class="bar-container">
+                                    <div class="bar" style={sem.barStyle}>
+                                        <span class="percentage-value">{sem.percentage}%</span>
+                                    </div>
+                                </div>
+                                <div class="label-groups">
+                                    <span class="label">Sub1</span>
+                                    <span class="label">Sub2</span>
+                                    <span class="label">Sub3</span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div class="note">
+                    <p class="progress-note">
+                        <strong>Note:</strong> The progress graph reflects the student’s academic journey, highlighting the percentage of marks earned each semester. Use this visualization to track their improvement over time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</template>
+
+
+
+
+
+
+
+
+
+<!-- 
+<template>
+    <div class="container">
+      <div class="header">
+            <div class="dropcard">
+                <a href="" class="btn-link" onclick={handleGoBack}>← Go Back</a>
+            </div>
+
+            <div class="year">
+                <span>Year</span>
+                <div class="dropdown-container d-flex align-items-center">
+                    <select class="form-select custom-select dropdown-toggle" onchange={handleYearChange} aria-label="Select Year">
+                        <option value="all" selected>All</option>
+                        <option value="1">Year 1</option>
+                        <option value="2">Year 2</option>
+                        <option value="3">Year 3</option>
+                        <option value="4">Year 4</option>
+                    </select>
+                    <i class="bi bi-caret-down-fill ml-2"></i>
+                </div>
+            </div>
+          
+            
+        </div>
+       
+        <div class="row">
+          
+                <div class="card">
+                    <img src={student} alt="Student Image" class="student-img" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Eleanor Pena</h5>
+                        <p><strong>Program Opted:</strong> Java Full Stack</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <span class="card-title">About</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      
+                        <span class="card-title">Contact</span>
+                        <div class="contact-info">
+                        <div class="mail">
+                            <img src={mail} alt="mail icon" class="icon"/>
+                                <p class="Email">Eleanorpena@gmail.com</p>
+                            </div>
+                            <div class="phone">
+                                <img src={phone} alt="phone icon" class="icon"/>
+                                <p class="phno">9652348956</p> 
+                            </div>   
+                            <div class="linkdin">
+                                <img src={linkdin} alt="linkedin icon" class="icon"/> 
+                                <p class="linkdin">
+                                    <a href="https://www.linkedin.com" target="_blank">LinkedIn Profile</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        
+        <div class="progress">
+          <div class="head_row">
+
+
+
+            <button type="button" class="btn-outline-primary" onclick={handlePrev}>
+                <img src={outline_left} alt="left icon" class="left" />
+            </button>
+            
+            <div class="btn-container">
+                <div class="btn-group" role="group">
+                    <template for:each={semestersToShow} for:item="semester">
+                        <button key={semester} type="button" class="sem-btn">
+                            {semester}
+                        </button>
+
+                    </template>
+                </div>
+            </div>
+            
+            <button type="button" class="btn-outline-primary" onclick={handleNext}>
+                <img src={outline_right} alt="right icon" class="right" />
+            </button>
+
+</div>
+<div class="graph">
+    <div class="bars">
+        <div class="progress-container">
+           <div class="percentage_container">
+           <div class="percentage-word">Percentage</div>
+           <div class="percentage-values">
+               <span>100</span>
+               <span>80</span>
+               <span>60</span>
+               <span>40</span>
+               <span>20</span>
+               <span>0</span>
+           </div>
+       </div>
+   </div>
+
+
+   <div class="table">
+    <template for:each={visibleSemesters} for:item="sem">
+        <div key={sem.id} class="sem-container">
+            <div class="sem-label">{sem.id}</div>
+            <div class="bar-container">
+                <div class="bar" style={sem.barStyle}>
+                    <span class="percentage-value">{sem.percentage}%</span>
+                </div>
+                
+            </div>
+            <div class="label-groups">
+                <span class="label">{data.subject1}</span>
+                <span class="label">{data.subject2}</span>
+                <span class="label">{data.subject3}</span>
+            </div>
+        </div>
+    </template>
+</div>
+       </div>
+       <div class="note">
+           <p class="progress-note">
+               <strong>Note:</strong> The progress graph reflects Student’s academic journey, highlighting the percentage of marks earned each semester. Use this visualization to track their improvement over time. *Progress isn’t just about the numbers—it’s about consistent effort and growth.
+           </p>
+           </div>
+   </div> 
+            </div>
+        </div>
+        
+    </div>
+
+
+</template> -->
