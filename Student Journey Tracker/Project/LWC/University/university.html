@@ -1,0 +1,175 @@
+<template>
+    <div>
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-box1">
+                <p>Total Universities</p>
+                <h6>{universitiesCount}</h6>
+            </div>
+            <div class="stat-box2">
+                <p>Students</p>
+                <h6>{studentsCount}</h6>
+            </div>
+            <div class="stat-box3">
+                <p>Mentors</p>
+                <h6>{mentorsCount}</h6>
+            </div>
+            <div class="stat-box4">
+                <p>Programs</p>
+                <h6>{programsCount}</h6>
+            </div>
+            <div class="stat-box5">
+                <p>Courses</p>
+                <h6>{coursesCount}</h6>
+            </div>
+        </div>
+
+        <div class="search-form">
+            <div class="university">
+                <p>University</p>
+            </div>
+            <div class="search">
+                <input 
+                    class="input"  
+                    value={searchQuery}
+                    onchange={handleSearchChange}/>
+                <lightning-button 
+                class="custom-button"
+                    label="Search" 
+                    variant="brand"
+                    onclick={handleSearch}>
+                </lightning-button>
+            </div>
+        </div>
+        
+
+        <!-- Table Section -->
+        <div class="table-container">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr>
+                        <th>S. No</th>
+                        <th>Name of University</th>
+                        <th>No. Programs Offered</th>
+                        <th>Students</th>
+                        <th>Mentors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={visibleRecords} for:item="university">
+                        <tr key={university.id}>
+                            <td>{university.numbers}</td>
+                            <td>
+                                <a href="#" onclick={handlenavigation} data-id={university.id}>
+                                    {university.name}
+                                </a>   
+                                  <!-- <a href="/screen2={university.name}">
+                                    {university.name}
+                                </a> -->
+
+                            </td>
+                            <td>{university.programs}</td>
+                            <td>{university.students}</td>
+                            <td>{university.mentors}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <div class="page">
+                <span>Page <b>{currentPage}</b></span>
+            </div>
+            <div class="num">
+                <button onclick={previousPage} disabled={isFirstPage}>&lt;</button>
+                <template for:each={paginationNumbers} for:item="page">
+                    <button
+                        key={page}
+                        onclick={navigateToPage}
+                        data-page={page}
+                    >
+                        {page}
+                    </button>
+                </template>
+                <button onclick={nextPage} disabled={isLastPage}>&gt;</button>
+            </div>
+        </div>
+    </div>
+
+        <lightning-card title="SOAP API Integration" icon-name="custom:custom14">
+            <div class="slds-p-around_medium">
+                <lightning-input label="Enter Parameter" value={inputParam} onchange={handleInputChange}></lightning-input>
+                <lightning-button label="Call SOAP API" onclick={callSOAPAPI} class="slds-m-top_medium"></lightning-button>
+                <template if:true={response}>
+                    <div class="slds-m-top_medium">
+                        <lightning-formatted-text value={response}></lightning-formatted-text>
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+
+
+
+     <lightning-card title="Number to Words Converter" icon-name="utility:number_input">
+        <div class="slds-m-around_medium">
+            <lightning-input 
+                type="number" 
+                label="Enter a number" 
+                value={inputNumber} 
+                onchange={handleNumberChange}>
+            </lightning-input>
+
+            <lightning-button 
+                label="Convert" 
+                variant="brand" 
+                class="slds-m-top_medium" 
+                onclick={handleConvert}>
+            </lightning-button>
+
+            <template if:true={outputWords}>
+                <p class="slds-m-top_medium">Words: {outputWords}</p>
+            </template>
+
+            <template if:true={errorMessage}>
+                <p class="slds-text-color_error">{errorMessage}</p>
+            </template>
+        </div>
+    </lightning-card>
+
+
+
+       <h1>Total Students: {totalStudents}</h1>
+
+    <template if:true={students}>
+        <ul>
+            <template for:each={students} for:item="student">
+                <li key={student.studentName}>{student.studentName}</li>
+            </template>
+        </ul>
+    </template>
+
+    <template if:true={error}>
+        <p>Error fetching students.</p>
+    </template>
+
+
+         <lightning-card title="Batch Contact Display" icon-name="standard:contact">
+
+        <lightning-button label="Fetch Contacts" onclick={handleFetchContacts} variant="success" class="slds-m-left_small"></lightning-button>
+        
+        <template if:true={contacts}>
+            <lightning-datatable 
+                key-field="Id" 
+                data={contacts} 
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+    </lightning-card>
+
+</template>
