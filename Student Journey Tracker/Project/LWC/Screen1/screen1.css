@@ -1,0 +1,214 @@
+body {
+    
+    /* font-family: Arial, sans-serif;
+    background-color: #e5e5e5;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    padding-left: 70px;
+    padding-right: 70px; */
+  }
+  
+  .stats { 
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom:5px;
+    margin:0;
+    
+  }
+  
+  .stat-box1, .stat-box2, .stat-box3, .stat-box4, .stat-box5 {
+    border: 1.5px solid lightgray;
+    background-color: #fff;
+    padding: 10px; 
+    width: calc(18% - 18px); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: auto; 
+    text-align: left;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    margin-bottom: 10px;
+  
+  }
+  .stats p{
+    padding-top: 3px;
+    padding-bottom: 3px;
+  font-size: 12px;
+  margin: 0;
+  }
+  .stats h6{
+    font-size: 14px;
+    margin: 0;
+    padding-bottom: 3px;
+    }
+  .stat-box1 {
+    border: 1px solid #F1788D;
+  }
+  
+  .stat-box2 {
+    border: 1px solid #9567E8;
+  }
+  
+  .stat-box3 {
+    border: 1px solid #00a2ff;
+  }
+  
+  .stat-box4 {
+    border: 1px solid #a3cc28;
+  }
+  
+  .stat-box5 {
+    border: 1px solid #9e0e0e;
+  }
+  
+  .search-form{
+  display:block;
+  margin: 0;
+  }
+  .search{
+    display: flex;
+    gap: 50px;
+    margin-top: 5px;
+  }
+  .search input{
+    vertical-align: top;
+    
+  }
+  .input{
+  padding:3px;
+  border-radius: 5px;
+  width:250px;
+  }
+  
+  .table-container {
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+  table {
+    padding-left: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+    border-radius: 0px, 0px, 4px, 4px;
+  }
+  
+  table th, table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+   
+  }
+  table td{
+    height: 25px;
+    border: 1.5px solid #ddd;
+    
+  }
+  table th {
+    background-color:  #fff7cc;
+    border-radius: 4px, 4px, 0px, 0px;
+  }
+  table tr:hover {
+    background-color: #f1f1f1;
+  }
+  table a{
+    color: #1365C9;
+  
+  }
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+    width: 100%;
+    margin: auto;
+  }.num{
+    display: flex;
+    column-gap: 5px;
+    padding-right: 10px;
+  }
+  
+  .pagination a {
+  
+    color: #004080;
+    text-decoration: none;
+    padding: 5px;
+  }
+  .pagination a.active {
+    font-weight: bold;
+    color: blue;
+    border-radius: 4px;
+  }
+  
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1200px) {
+    .stat-box1, .stat-box2, .stat-box3, .stat-box4, .stat-box5 {
+        width: calc(25% - 20px); /* 4 boxes per row */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .stat-box1, .stat-box2, .stat-box3, .stat-box4, .stat-box5 {
+        width: calc(33.33% - 20px); /* 3 boxes per row */
+    }
+  
+    table th, table td {
+        font-size: 13px; /* Reduce font size for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stat-box1, .stat-box2, .stat-box3, .stat-box4, .stat-box5 {
+        width: calc(50% - 20px); /* 2 boxes per row */
+    }
+  
+    table th, table td {
+        font-size: 12px; /* Reduce font size for smaller screens */
+    }
+  
+    table td {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .stat-box1, .stat-box2, .stat-box3, .stat-box4, .stat-box5 {
+        width: 100%; /* Full-width boxes */
+    }
+  
+    table {
+        display: block; /* Stacked table layout for small screens */
+    }
+  
+    table thead {
+        display: none; /* Hide headers */
+    }
+  
+    table tr {
+        display: flex;
+        flex-direction: column; /* Stack rows */
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px; /* Add spacing between rows */
+    }
+  
+    table td {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px; /* Smaller font size */
+        padding: 8px; /* Reduced padding */
+    }
+  
+    table td:before {
+        content: attr(data-label); /* Use data-label for column headers */
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+  }
