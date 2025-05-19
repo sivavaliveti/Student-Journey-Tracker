@@ -1,0 +1,14 @@
+<!-- contactChecker.html -->
+<template>
+    <lightning-card title="Check Contact" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Name" value={name} onchange={handleNameChange}></lightning-input>
+            <lightning-input label="Email" type="email" value={email} onchange={handleEmailChange}></lightning-input>
+            <lightning-button label="Check Contact" onclick={checkContact} class="slds-m-top_medium"></lightning-button>
+            <p class="slds-m-top_medium">{result}</p>
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error.body.message}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
