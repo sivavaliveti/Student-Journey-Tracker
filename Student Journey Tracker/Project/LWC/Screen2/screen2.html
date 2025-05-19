@@ -1,0 +1,252 @@
+<template>
+    <div class="main">
+       <div class="header">
+           <div class="back">
+               <a href="javascript:void(0);" onclick={goBack}>
+                   <img src={goback} alt="Go Back" class="back-icon" />
+               </a>
+               <p class="back-text">Go Back</p>
+           </div>
+   
+           <div class="college-info">
+               <div class="prog">
+                   <p id="selected-program-display">Program Name: {selectedProgram}</p>
+               </div>
+               <div class="clg">
+                   <p id="college-name-display">College Name: {universityName}</p>
+               </div>
+           </div>
+       </div>
+   
+       <div class="middle">
+       
+           <div class="filters">
+               <lightning-input
+                   label="Student Name"
+                   value={studentName}
+                   onchange={handleInputChange}
+               ></lightning-input>
+               <lightning-combobox
+                   label="Program Name"
+                   options={programOptions}
+                   value={selectedProgram}
+                   onchange={handleProgramChange}
+               ></lightning-combobox>
+               <!-- <lightning-button
+                   label="Search"
+                   variant="brand"
+                   onclick={handleSearch}
+               ></lightning-button> -->
+               <lightning-button label="Search" variant="brand" onclick={handleSearch}></lightning-button>
+           </div>
+   
+     
+           <div class="filter">
+               <lightning-combobox   class="custom-combobox"
+                   label="Year"
+                   options={yearOptions}
+                   value={selectedYear}
+                   onchange={handleYearChange}
+               ></lightning-combobox>
+               <lightning-combobox   class="custom-combobox"
+                   label="Semester"
+                   options={semesterOptions}
+                   value={selectedSemester}
+                   onchange={handleSemesterChange}
+               ></lightning-combobox>
+           </div>
+       </div>
+   
+       
+       <div>
+           <table class="student-table">
+               <thead>
+                   <tr>
+                       <th>S. No</th>
+                       <th>Name of Students</th>
+                       <th>Semester</th>
+                       <th>Year</th>
+                       <th>Grade</th>
+                       <th>Skills</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <template for:each={visibleRecords} for:item="student" for:index="index">
+                       <tr key={student.id}>
+                           <td>{student.SerialNumber}</td>
+                           <td>
+                               <a  onclick={handleStudentClick} data-student-id={student.StudentId}  data-name={student.StudentName} >
+                                   {student.Name}
+                               </a>
+                           </td>
+                           <td>{student.Semester}</td>
+                           <td>{student.Year}</td>
+                           <td>{student.Grade}</td> 
+                           <td>
+                               <template for:each={student.skillList} for:item="skill">
+                                   <span key={skill} class="skill-badge">{skill}</span>
+                               </template>
+   
+                           </td>
+                       </tr>
+                   </template>
+               </tbody>
+           </table>
+       </div>
+   
+       <div class="pagination">
+           <div class="page">
+               <span>Page <b>{currentPage}</b></span>
+           </div>
+           <div class="num">
+               <button onclick={previousPage} disabled={isFirstPage}>&lt;</button>
+               
+               <template for:each={paginationNumbers} for:item="page">
+                   <button
+                       key={page}
+                      
+                       onclick={navigateToPage}
+                       data-page={page}
+                   >
+                       {page}
+                   </button>
+               </template>
+   
+               <button onclick={nextPage} disabled={isLastPage}>&gt;</button>
+           </div>
+       </div>
+    </div>
+   </template>
+
+
+
+
+
+
+
+
+
+
+
+           <!-- <template>
+      <div class="header">
+                   <div class="back">
+                       <a href="javascript:void(0);" onclick={goBack}>
+                           <img src={goback} alt="Go Back" class="back-icon" />
+                       </a>
+                       <p class="back-text">Go Back</p>
+                   </div>
+           
+                   <div class="college-info">
+                       <div class="prog">
+                           <p id="selected-program-display">Program Name: {selectedProgram}</p>
+                       </div>
+                       <div class="clg">
+                           <p id="college-name-display">College Name: {universityName}</p>
+                       </div>
+                   </div>
+               </div>
+
+    <div class="middle">
+    
+        <div class="filters">
+            <lightning-input
+                label="Student Name"
+                value={studentName}
+                onchange={handleStudentNameChange}
+            ></lightning-input>
+            <lightning-combobox
+                label="Program Name"
+                options={programOptions}
+                value={selectedProgram}
+                onchange={handleProgramChange}
+            ></lightning-combobox>
+            <lightning-button
+                label="Search"
+                variant="brand"
+                onclick={searchDetails}
+            ></lightning-button>
+        </div>
+
+  
+        <div class="filter">
+            <lightning-combobox   class="custom-combobox"
+                label="Year"
+                options={yearOptions}
+                value={selectedYear}
+                onchange={handleYearChange}
+            ></lightning-combobox>
+            <lightning-combobox   class="custom-combobox"
+                label="Semester"
+                options={semesterOptions}
+                value={selectedSemester}
+                onchange={handleSemesterChange}
+            ></lightning-combobox>
+        </div>
+    </div>
+
+
+    <div>
+        <table class="student-table">
+            <thead>
+                <tr>
+                    <th>S. No</th>
+                    <th>Name of Students</th>
+                    <th>Semester</th>
+                    <th>Year</th>
+                    <th>Grade</th>
+                    <th>Skills</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={visibleRecords} for:item="student" for:index="index">
+                    <tr key={student.id}>
+                        <td>{student.SerialNumber}</td>
+                        <td>
+                            <a  onclick={handleStudentClick} data-student-id={student.StudentId}  data-name={student.StudentName} >
+                                {student.Name}
+                            </a>
+                        </td>
+                        <td>{student.Semester}</td>
+                        <td>{student.Year}</td>
+                        <td>{student.Grade}</td> 
+                        <td>
+                            <template for:each={student.skillList} for:item="skill">
+                                <span key={skill} class="skill-badge">{skill}</span>
+                            </template>
+
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination">
+        <div class="page">
+            <span>Page <b>{currentPage}</b></span>
+        </div>
+        <div class="num">
+            <button onclick={previousPage} disabled={isFirstPage}>&lt;</button>
+            
+            <template for:each={paginationNumbers} for:item="page">
+                <button
+                    key={page}
+                   
+                    onclick={navigateToPage}
+                    data-page={page}
+                >
+                    {page}
+                </button>
+            </template>
+
+            <button onclick={nextPage} disabled={isLastPage}>&gt;</button>
+        </div>
+    </div>
+</template> -->
+
+
+  <!-- <a href="/screen2={university.name}">
+                                    {university.name}
+                                </a> -->
+        <!-- College Info Section -->

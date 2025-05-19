@@ -1,0 +1,367 @@
+/* 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    color: white;
+    margin:0;
+}
+
+.header .go-back {
+    cursor: pointer;
+    margin-right: auto;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+
+.header .go-back:hover {
+    opacity: 0.8;
+}
+.middle{
+    display: flex;
+    justify-content: space-between;
+   margin:0px 22.5px 0px 22.5px;
+}
+
+.filters {
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap; 
+} 
+
+.filters lightning-input{
+    width: 200px;
+    margin: 0px 0;
+}
+.filters lightning-combobox {
+    width: 150px;
+    margin: 0px 0;
+}
+
+
+.filter{
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap; 
+}
+.filter lightning-combobox {
+    margin: 0px 0;
+    padding: 0;
+}
+
+.filters lightning-button {
+    color: rgb(233, 10, 10);
+    border: none;
+    padding: 24px 15px 5px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.filters lightning-button ,
+.filters lightning-input,
+.filters lightning-combobox{
+    margin: 0;
+}
+
+.college-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0px 0;
+    font-size: 18px;
+}
+
+.college-info p {
+    background-color: #ee8c3c;
+    color: #010407;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.student-table {
+    width: 97.5%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+.student-table th {
+    background-color: #f0e68d;
+    color: #333;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+.student-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.student-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.student-table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+
+.student-table a{
+    text-decoration: underline;
+}
+
+.skill-badge {
+    display: inline-block;
+    background-color: #c3d69b;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+
+p {
+    text-align: center;
+    font-size: 16px;
+    margin: 20px 0;
+    color: #555;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+    width: 100%;
+    margin: auto;
+  }.num{
+    display: flex;
+    column-gap: 5px;
+    padding-right: 10px;
+  }
+   */
+
+
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+.main{
+    margin: 0px 80px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    margin:0;
+    top:-100px;
+    cursor: pointer;
+    margin-right: auto;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+}
+.back{
+    display: flex;
+}
+.back-icon {
+    width: 25px; 
+    height: auto; 
+}
+
+.back-text {
+    font-size: 16px; 
+    margin: 0; 
+    color: #333;
+}
+
+.middle{
+    display: flex;
+    justify-content: space-between;
+   /* margin:0px 22.5px 0px 22.5px; */
+   margin: 0; /* Remove any vertical margin */
+   padding: 0 22.5px;
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; 
+} 
+
+.filters lightning-input{
+    width: 200px;
+    margin: 0px 0;
+}
+.filters lightning-combobox {
+    width: 150px;
+    margin: 0px 0;
+}
+
+
+.filter{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.filters lightning-button {
+    color: rgb(233, 10, 10);
+    border: none;
+    padding: 25px 15px 0px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+.college-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0px 0;
+    font-size: 18px;
+    
+}
+
+.college-info p {
+    background-color: #ee8c3c;
+    color: #010407;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.student-table {
+    width: 97.5%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+.student-table th {
+    background-color: #f0e68d;
+    color: #333;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+.student-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.student-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.student-table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+
+.student-table a{
+    text-decoration: underline;
+}
+.skill-badge {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 4px;
+    border-radius: 3.703px;
+    background: #A4B561;
+    color:#ffffff;
+}
+
+
+p {
+    text-align: center;
+    font-size: 16px;
+    margin: 20px 0;
+    color: #555;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    border: none;
+}
+.page{
+    padding-left: 5px;
+}
+
+.num {
+    display: flex;
+    column-gap: 5px;
+    padding-right: 10px;
+}
+
+.num button {
+    all: unset; /* Resets all button-specific styles */
+    color: #004080;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+}
+
+.num button[data-page]:hover {
+    text-decoration: underline;
+}
+
+.num button.active {
+    font-weight: bold;
+    color: blue;
+}
+
+button[disabled] {
+    color: #ccc;
+    cursor: default;
+    pointer-events: none;
+}
+
+.semisterComboBox{
+    width: 100px;    margin-top: 4px;
+}
