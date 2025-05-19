@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Batch Contact Display" icon-name="standard:contact">
+        <lightning-button label="Run Batch" onclick={handleRunBatch} variant="brand"></lightning-button>
+        <lightning-datatable 
+            key-field="Id" 
+            data={contacts} 
+            columns={columns}>
+        </lightning-datatable>
+    </lightning-card>
+</template>
